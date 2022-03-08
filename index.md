@@ -1,37 +1,10 @@
-## Welcome to GitHub Pages
+## GAB - Gestures for artworks browsing
 
-You can use the [editor on GitHub](https://github.com/VBernasconi/GAB_project/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Hands are an important tool for our daily communication with our peers and the world. They allow us to convey information through particular gestures that are either the product of social conventions or personal expressions. Thanks to the sophistication of sensing and computer vision technologies over the past decade, automated hand recognition can now be more easily used and integrated in simple web applications. In a context of digital artworks collections, it means that gestures can now be envisioned as a new browsing tool that goes beyond simple movements to navigate through a 3D digital space. The present page presents Gestures for Artwork Browsing (GAB), a web application which proposes to use hand motions as a way to directly query pictorial hand gestures from the past. Based on materials from a digitized collection of Renaissance paintings, GAB enables users to record a sequence with the hand movement of their choice and outputs an animation reproducing that same sequence with painted hands. Fostering new research possibilities, the project is a novelty in terms of art database browsing and human-computer interaction, as it does not require traditional search tools such as text-based inputs based on metadata, and allows a direct communication with the content of the artworks.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How it works
+1. Record a gesture of 5 seconds with your hand
+2. Wait for the computer to get for each recorded frame the closest painted hand
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```code
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/VBernasconi/GAB_project/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.

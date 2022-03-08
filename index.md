@@ -10,10 +10,10 @@ The present page presents Gestures for Artwork Browsing (GAB), a web application
 ![Results detail](/docs/assets/images/GAB_02.png)
 
 ### Behind the scene
-1. Before the creation of the application, a collection of painted hands was generated with the help of the ![openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) model. The latter detects body poses through a set of keypoints representing the shape of a skeleton. The hands were automatically croped from the keypoints information (a bounding box was created based on the extreme coordinates), resulting in a set of painted hands, which was later manually cleaned.
+1. Before the creation of the application, a collection of painted hands was generated with the help of the [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) model. The latter detects body poses through a set of keypoints representing the shape of a skeleton. The hands were automatically croped from the keypoints information (a bounding box was created based on the extreme coordinates), resulting in a set of painted hands, which was later manually cleaned.
 ![Openpose detect](/docs/assets/images/GAGA_bibhertz.png)
 3. A simple k-NN was trained on the keypoints information available for each hand.
-4. When the user records a sequence, the ![MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html) model is used to analyze the images in real-time. For each image, a hand is detected with its corresponding keypoints. The coordinates of these keypoints are stored to be later processed.
+4. When the user records a sequence, the [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html) model is used to analyze the images in real-time. For each image, a hand is detected with its corresponding keypoints. The coordinates of these keypoints are stored to be later processed.
 5. Once the sequence is fully recorded, the keypoints are then processed. The retrieval of similar hand poses is performed with the pre-trained k-NN model. It outputs a list of the five painted hands closest to the hand recorded. To avoid redundancy, the two previous images used in the sequence are looped through in order to check if a hand was already used in two previous frames.
 ```code
 ```

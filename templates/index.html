@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<title>The hand browsing tool</title>
+		<style>
+			.tooltip-inner {
+			    min-width: 100px;
+			    max-width: 700px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="containter">
+			<div class="row justify-content-md-center">
+				<div class="col-md-auto">
+					<div class="row my-4">
+						<h1>GAB</h1><p>Gestures for Artwork Browsing</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-md-center">
+				<div class="col-md-10">
+					{% if gif_path %}
+					<div class="row justify-content-md-center">
+						<img src="{{ url_for('static', filename=gif_path) }}" height="100%"/>
+					</div>
+					<div class="row my-4 justify-content-md-center">
+						<a class="btn btn-light" href="{{ url_for('index') }}" role="button">Try again</a>
+					</div>
+					<div class="row my-4 justify-content-md-center">
+						<div class="col-md-6">
+							<p class="text-left text-break">
+								What am I seeing?</br>This animated .gif was created from your gesture previously recorded.
+								The different keypoints defining your hand at each position were stored and a pre-trained machine
+								learning model was applied in order to find similar hand poses in a dataset of hands collected
+								from Early Modern paintings.
+							</p>
+						</div>
+					</div>
+
+					<div class="row justify-content-md-center">
+						<p>
+							<button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseData" aria-expanded="false" aria-controls="collapseData">
+		    			Get more insight
+		  				</button>
+						</p>
+					</div>
+
+					<div class="collapse" id="collapseData">
+						<div class="row justify-content-md-center">
+							<div class="col-md-12">
+								<div class="overflow-auto" style="width:100%; height:500px; overflow:auto;">
+									<table class="table-borderless">
+										<thead>
+											<tr>
+									      <th scope="col">Recorded hand</th>
+									      <th scope="col">Painted hand</th>
+									    </tr>
+										</thead>
+										<tbody>
+										{% for (rec_hand, art_hand, art_master, art_metadata) in img_display %}
+											<tr>
+												<th scope="row">
+													<img src="{{ url_for('static', filename=rec_hand) }}" class="rounded mx-auto d-block" alt="recorded hand"  height="150" max-width="150">
+												</th>
+												<td>
+													<a data-toggle="tooltip" title="<img src='{{ url_for('get_masterfile', filename=art_master) }}' class='rounded mx-auto d-block' alt='art hand'  style='height:450px;'><p>'{{ art_metadata }}'</p>" data-placement="right">
+														<img src="{{ url_for('get_file', filename=art_hand) }}" class="rounded mx-auto d-block" alt="art hand"  height="150" max-width="150">
+													</a>
+												</td>
+											</tr>
+										{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% elif loading_state %}
+					<div class="row justify-content-md-center">
+						<div height="80%">
+							<div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+						</div>
+					</div>
+					{% else %}
+					<div class="row justify-content-md-center">
+						<div class="row justify-content-md-center">
+							<img src="{{ url_for('video_feed') }}" height="80%"/>
+						</div>
+						<div class="row justify-content-md-center">
+							<form method="get" action="{{ url_for('tasks') }}">
+								<input type="submit" class="btn btn-light" value="Start hand recording" name="start"/>
+							</form>
+						</div>
+					</div>
+					<div class="row mt-5 justify-content-md-center">
+						<div class="col-md-6">
+							<p class="text-left text-break">
+								What am I doing?</br>Press the 'Start hand recording' button.
+								Then start moving one of your hand in front of the camera.
+								The gesture will be recorded once a hand is detect for a timelaps of 5 seconds.
+							</p>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script>
+			$(function () {
+  			$('[data-toggle="tooltip"]').tooltip({
+					html: true
+				})
+			})
+		</script>
+		<script>
+			{% if loading_state %}
+				window.location.replace('/results')
+			{% endif %}
+		</script>
+	</body>
+</html>

@@ -16,10 +16,8 @@ The present page presents Gestures for Artwork Browsing (GAB), a web application
 4. When the user records a sequence, the [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html) model is used to analyze the images in real-time. For each image, a hand is detected with its corresponding keypoints. The coordinates of these keypoints are stored to be later processed.
 5. Once the sequence is fully recorded, the keypoints are then processed. The retrieval of similar hand poses is performed with the pre-trained k-NN model. It outputs a list of the five painted hands closest to the hand recorded. To avoid redundancy, the two previous images used in the sequence are looped through in order to check if a hand was already used in two previous frames.
 ```code
+
 ```
 
 ### Whole process summary
-<video src="https://github.com/VBernasconi/GAB_project/blob/gh-pages/docs/assets/images/GAB_Bernasconi_IUI_2022_small.mp4"></video>
-
-<video src="https://user-images.githubusercontent.com/7060764/157204064-e043c420-089a-4d32-92af-3745b90b8165.mp4" data-canonical-src="https://user-images.githubusercontent.com/7060764/157204064-e043c420-089a-4d32-92af-3745b90b8165.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:1080px;">
-</video>
+<video src="https://github.com/VBernasconi/GAB_project/blob/gh-pages/docs/assets/images/GAB_Bernasconi_IUI_2022_small.mp4" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:1080px;"></video>

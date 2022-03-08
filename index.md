@@ -6,7 +6,7 @@ The present page presents Gestures for Artwork Browsing (GAB), a web application
 ![Hand recording](/docs/assets/images/GAB_01.png)
 3. Wait for the computer to process. It retrieves your hand from each frame of the recorded sequence. For each hand, the closest painted hand from the painting collection is found. More on the process in the [next section](#behind-the-scene)
 4. Your result is then displayed. It consists of a .gif animation representing your movement and the possibility to browse through each frame and get further information on the original painting.
-![Gif result](/docs/assets/images/movie_knn_2021-10-14_12-34.gif)
+<p align="center">![Gif result](/docs/assets/images/movie_knn_2021-10-14_12-34.gif)</p>
 ![Results detail](/docs/assets/images/GAB_02.png)
 
 ### Behind the scene

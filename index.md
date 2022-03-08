@@ -4,15 +4,24 @@ Hands are an important tool for our daily communication with our peers and the w
 
 ### How it works
 1. Record a gesture of 5 seconds with your hand
-2. Wait for the computer to get for each recorded frame the closest painted hand
-3. Your result
+
+![Hand recording](/docs/assets/images/GAB_01.png)
+3. Wait for the computer to process. It retrieves your hand from each frame of the recorded sequence. For each hand, the closest painted hand from the painting collection is found. More on the process in the [next section](#behind-the-scene)
+4. Your result
 
 ![Gif result](/docs/assets/images/movie_knn_2021-10-14_12-34.gif)
 
+![Results detail](/docs/assets/images/GAB_02.png)
+
+### Behind the scene
+1. Before the creation of the application, a collection of painted hands was generated with the help of the ![openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) model. The latter detects body poses through a set of keypoints representing the shape of a skeleton. The hands were automatically croped from the keypoints information (a bounding box was created based on the extreme coordinates), resulting in a set of painted hands, which was later manually cleaned.
+![Openpose detect](/docs/assets/images/GAGA_bibhertz.png)
+3. A simple k-NN was trained on the keypoints information available for each hand.
+4. When the user records a sequence, the ![MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html) model is used to analyze the images in real-time. For each image, a hand is detected with its corresponding keypoints. The coordinates of these keypoints are stored to be later processed.
+5. Once the sequence is fully recorded, the keypoints are then processed. The retrieval of similar hand poses is performed with the pre-trained k-NN model. It outputs a list of the five painted hands closest to the hand recorded. To avoid redundancy, the two previous images used in the sequence are looped through in order to check if a hand was already used in two previous frames.
 ```code
 ```
-### Behind the scene
-![Openpose detect](/docs/assets/images/GAGA_bibhertz.png)
+
 ### Whole process summary
 <video src="https://github.com/VBernasconi/GAB_project/blob/gh-pages/docs/assets/images/GAB_Bernasconi_IUI_2022_small.mp4"></video>
 

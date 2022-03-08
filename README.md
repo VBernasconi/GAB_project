@@ -3,7 +3,7 @@
 Gestures for artworks browsing is project that allows you to browse through a collection of painted hands through your own gestures.
 
 ## How it works
-Once the application starts, the user has the possibility to start recording a hand gesture of 5 seconds. The computer process the iamges and retrieve similar painted hands from the collection. It creates a .gif animation which reproduces the hand gesture through paintings. The user also has the possibility to brose through each frame to get more details about the original painting.
+Once the application starts, the user has the possibility to start recording a hand gesture of 5 seconds. The computer process the iamges and retrieve similar painted hands from the collection. It creates a .gif animation which reproduces the hand gesture through paintings. The user also has the possibility to brose through each frame to get more details about the original painting. For more details, check the [repository page](https://vbernasconi.github.io/GAB_project/#behind-the-scene).
 
 ## Technical specificites
 - The collection of painted hands was created with [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) (their pre-trained model was directly used on the paintings).

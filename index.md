@@ -6,6 +6,7 @@ Hands are an important tool for our daily communication with our peers and the w
 1. Record a gesture of 5 seconds with your hand
 2. Wait for the computer to get for each recorded frame the closest painted hand
 3. Your result
+
 ![Gif result](/docs/assets/images/movie_knn_2021-10-14_12-34.gif)
 
 ```code

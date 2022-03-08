@@ -7,6 +7,7 @@ Hands are an important tool for our daily communication with our peers and the w
 2. Wait for the computer to get for each recorded frame the closest painted hand
 3. Your result
 ![Gif result](/GAB_project/assets/movie_knn_2021-10-14_12-34.gif)
+
 ```code
 ```
 ### Behind the scene

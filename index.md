@@ -8,7 +8,10 @@ Hands are an important tool for our daily communication with our peers and the w
 
 ```code
 ```
+### Behind the scene
+![Openpose detect](/GAB_project/assets/img/logo.png)
 ### Whole process summary
-<video src="https://github.com/VBernasconi/GAB_project/blob/gh-pages/public/GAB_Bernasconi_IUI_2022_small.mp4"</video>
+<video src="https://github.com/VBernasconi/GAB_project/blob/gh-pages/public/GAB_Bernasconi_IUI_2022_small.mp4"></video>
+
 <video src="https://user-images.githubusercontent.com/7060764/157204064-e043c420-089a-4d32-92af-3745b90b8165.mp4" data-canonical-src="https://user-images.githubusercontent.com/7060764/157204064-e043c420-089a-4d32-92af-3745b90b8165.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:1080px;">
 </video>

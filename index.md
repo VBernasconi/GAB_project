@@ -20,6 +20,5 @@ The present page presents Gestures for Artwork Browsing (GAB), a web application
 ```
 
 ### Whole process summary
-https://github.com/VBernasconi/GAB_project/blob/21834097b889fafeb62aa0fc37f0bf4c35021b4d/docs/assets/images/GAB_Bernasconi_IUI_2022_small.mp4
 <video src="https://github.com/VBernasconi/GAB_project/blob/gh-pages/docs/assets/images/GAB_Bernasconi_IUI_2022_small.mp4" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:1080px;"></video>
 

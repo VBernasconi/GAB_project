@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 logo: /docs/assets/images/movie_knn_2021-10-14_12-34.gif
 title: [Gestures for Artworks Browsing]
-description: ["The browsing interface for a collection of painted hands, read paper <a href='https://github.com/VBernasconi/GAB_project/blob/a223ff888807e80ece14384b86db62816aee8d65/docs/assets/images/IUI_Bernasconi.pdf' target='_blank'>here</a>"]
+description: ["The browsing interface for a collection of painted hands, read paper <a href='https://dl.acm.org/doi/pdf/10.1145/3490100.3516470' target='_blank'>here</a>"]
 social-network-links:
   email: "valentine.bernasconi@uzh.ch"
   github: VBernasconi

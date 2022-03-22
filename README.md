@@ -12,7 +12,7 @@ Once the application starts, the user has the possibility to start recording a h
 
 ## Repository
 The present repository hosts the main code. The images used belong to the photographic collection of the [Bibliotheca Hertziana](https://www.biblhertz.it/en/photographic-collection) and are for the time being stored on a private server.
-* GAGA.py : the main Flask application file. Hold the route system for URL requests and all functions to record webcame images, store images, load classification model, apply model, retrieve corresponding image.
+* GAB.py : the main Flask application file. Hold the route system for URL requests and all functions to record webcame images, store images, load classification model, apply model, retrieve corresponding image.
 * __python_scripts/__ : 
   * KPmanager.py: Script with various functions to handle the keypoints
   * *.pkl* : pickles files with information on the collection of painted hands

@@ -33,6 +33,6 @@ $ pip install -r requirements.txt
 ```
 You can then simply launch the Flask application by running:
 ```
-$ python 'GAGA.py'
+$ python 'GAB.py'
 ```
 __NOTE:__ The collection of images belong to the photographic collection of the [Bibliotheca Hertziana](https://www.biblhertz.it/en/photographic-collection) and are stored on a private server. For the time being, they cannot be shared.
